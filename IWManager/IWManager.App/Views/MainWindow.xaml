@@ -1,0 +1,60 @@
+﻿<Window x:Class="IWManager.App.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:IWManager.App.ViewModels"
+        xmlns:views="clr-namespace:IWManager.App.Views"
+        xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
+        xmlns:ei="http://schemas.microsoft.com/expression/2010/interactions"
+        mc:Ignorable="d"
+        Title="Správce předmětů IWx"
+        Resources="{StaticResource ShinyBlueTheme}"
+        DataContext="{Binding Source={StaticResource ViewModelLocator}, Path=MainViewModel}"
+        d:DataContext="{d:DesignInstance viewModels:MainViewModel, IsDesignTimeCreatable=False}">
+
+    <Grid Resources="{StaticResource ShinyBlueTheme}">
+        <TabControl >
+            <TabItem Header="Předměty">
+                <Grid Background="#202020">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="FirstGrid" Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button HorizontalAlignment="Left" Width="130" Content="Přidat předmět" Command="{Binding CreateCourseCommand}"></Button>
+                        <views:CourseListView Grid.Row="1"></views:CourseListView>
+                    </Grid>
+                    <views:CourseDetailView Grid.Column="1" Grid.Row="0" Grid.RowSpan="2" MinWidth="{Binding ElementName=FirstGrid, Path=ActualWidth}"></views:CourseDetailView>
+
+                </Grid>
+            </TabItem>
+            <TabItem Header="Studenti">
+                <Grid Background="#202020">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="200"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid x:Name="SecondGrid">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Button HorizontalAlignment="Left" Width="120" Content="Přidat studenta" Command="{Binding CreateStudentCommand}"></Button>
+                        <views:StudentListView Grid.Row="1"></views:StudentListView>
+                    </Grid>
+                    <views:StudentDetailView Grid.Column="1" MinWidth="{Binding ElementName=SecondGrid, Path=ActualWidth}"></views:StudentDetailView>
+                </Grid>
+            </TabItem>
+        </TabControl>
+    </Grid>
+
+</Window>

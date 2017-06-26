@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{37E3F1D7-F944-4A57-A46A-3CCA73743709}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>IWManager.DAL</RootNamespace>
+    <AssemblyName>IWManager.DAL</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Entities\Base\Implementation\RatingType.cs" />
+    <Compile Include="Entities\Course.cs" />
+    <Compile Include="Entities\GeneralRating.cs" />
+    <Compile Include="Entities\Rating.cs" />
+    <Compile Include="Entities\Base\Implementation\Sex.cs" />
+    <Compile Include="Entities\Student.cs" />
+    <Compile Include="Entities\Base\Implementation\EntityBase.cs" />
+    <Compile Include="Entities\Base\Interface\IEntity.cs" />
+    <Compile Include="IWManagerDbContext.cs" />
+    <Compile Include="Migrations\201704161907434_initialCreate.cs" />
+    <Compile Include="Migrations\201704161907434_initialCreate.Designer.cs">
+      <DependentUpon>201704161907434_initialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704260828116_changes.cs" />
+    <Compile Include="Migrations\201704260828116_changes.Designer.cs">
+      <DependentUpon>201704260828116_changes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704261140314_datetime.cs" />
+    <Compile Include="Migrations\201704261140314_datetime.Designer.cs">
+      <DependentUpon>201704261140314_datetime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704280825313_photo.cs" />
+    <Compile Include="Migrations\201704280825313_photo.Designer.cs">
+      <DependentUpon>201704280825313_photo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705011931531_RatingTypeChanged.cs" />
+    <Compile Include="Migrations\201705011931531_RatingTypeChanged.Designer.cs">
+      <DependentUpon>201705011931531_RatingTypeChanged.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201705020852334_PhoneNumberEdit.cs" />
+    <Compile Include="Migrations\201705020852334_PhoneNumberEdit.Designer.cs">
+      <DependentUpon>201705020852334_PhoneNumberEdit.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201704161907434_initialCreate.resx">
+      <DependentUpon>201704161907434_initialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704260828116_changes.resx">
+      <DependentUpon>201704260828116_changes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704261140314_datetime.resx">
+      <DependentUpon>201704261140314_datetime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704280825313_photo.resx">
+      <DependentUpon>201704280825313_photo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705011931531_RatingTypeChanged.resx">
+      <DependentUpon>201705011931531_RatingTypeChanged.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201705020852334_PhoneNumberEdit.resx">
+      <DependentUpon>201705020852334_PhoneNumberEdit.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,34 @@
+﻿<Application x:Class="IWManager.App.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:converters="clr-namespace:IWManager.App.Converters"
+             xmlns:app="clr-namespace:IWManager.App"
+             StartupUri="Views/MainWindow.xaml">
+    <Application.Resources>
+        <app:ViewModelLocator x:Key="ViewModelLocator" />
+        <converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+        <converters:SelectableAcademicYearsToComboBoxItemsConverter x:Key="SelectableAcademicYearsToComboBoxItemsConverter"/>
+        <converters:GeneralRatingListsToComboBoxItemsConverter x:Key="GeneralRatingListsToComboBoxItemsConverter"/>
+
+        <ResourceDictionary x:Key="ShinyBlueTheme">
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Core.Implicit.xaml" />
+                <ResourceDictionary Source="Themes/MetroDark/MetroDark.MSControls.Toolkit.Implicit.xaml" />
+                <ResourceDictionary Source="Themes/MetroDark/Styles.Shared.xaml" />
+                <ResourceDictionary Source="Themes/MetroDark/Styles.WPF.xaml" />
+                <ResourceDictionary Source="Themes/MetroDark/Theme.Colors.xaml" />
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+        <StaticResource ResourceKey="ShinyBlueTheme" />
+
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="HorizontalAlignment" Value="Left"></Setter>
+            <Setter Property="VerticalAlignment" Value="Top"></Setter>
+            <Setter Property="MinWidth" Value="50"></Setter>
+            <Setter Property="MinHeight" Value="10"></Setter>
+            <Setter Property="MaxWidth" Value="100"></Setter>
+            <Setter Property="MaxHeight" Value="20"></Setter>
+        </Style>
+
+    </Application.Resources>
+</Application>
