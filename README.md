@@ -30,4 +30,4 @@ Spolupráce
 -------------------
 Projekt øeší studenti v týmech. V každém týmu jsou 3 studenti. Tým o ménì studentech není pøípustný. 
 Pøi øešení projektu týmy využívají GIT na sdílení kódu. Tým do svého GIT repositáøe pøidìlí pøístup vyuèujícím (zpùsob bude vysvìtlen v rámci 1. cvièení). 
-Z GITu musí být viditelná postupná práce na projektu a spolupráce týmu. Pokud uvidíme, že existuje malé množství nelogických a nepøeložitelných commitù, tak nás bude zajímat, jak jste spolupracovali a mùže to vézt na snížení bodového hodnocení. 
+Z GITu musí být viditelná postupná práce na projektu a spolupráce týmu. Pokud uvidíme, že existuje malé množství nelogických a nepøeložitelných commitù, tak nás bude zajímat, jak jste spolupracovali a mùže to vést ke snížení bodového hodnocení. 
